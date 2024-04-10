@@ -11,8 +11,8 @@ class User {
   // Робимо метод sendMessage який відправляє повідомлення за допомогою відповідного месенджера, та виводить в консоль `${this.name} відправив повідомлення ${message}`.
   // Він приймає один параметр - message - повідомлення, яке потрібно відправити за допомогою методу sendMessage.
   sendMessage(message) {
-    this.messenger.sendMessage(this, message);
     console.log(`${this.name} відправив повідомлення: ${message}`);
+    return this.messenger.sendMessage(message);
   }
   // Метод receiveMessage приймає аргументи user,message та виводить в консоль ${this.name} отримав повідомлення від ${user.name}: ${message}
   receiveMessage(user, message) {
@@ -38,7 +38,7 @@ class EmailMessenger {
   }
 }
 
-console.log("Завдання 7 ====================================");
+console.log("Завдання 8 ====================================");
 
 // Створюємо двох користувачів - John та Jane - які відправляють повідомлення за допомогою різних месенджерів.
 const john = new User("John", SMSMessenger);
